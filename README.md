@@ -8,16 +8,16 @@ The MEDIA_MOUNTED intent is no longer permitted (post KitKat) for non-system app
 
 It’s not recursive, though, and has to be run on the exact_file_name, so it’s not a good replacement.
 ```
-adb shell am broadcast -a android.intent.ACTION_MEDIA_SCANNER_SCAN_FILE -d file:///<file path>
+adb shell am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file:///<file path>
 ```
 
 If you need to rescan recursively, you can use this command (fix paths accordingly):
 ```
-adb shell "find </file path/> -exec am broadcast -a android.intent.ACTION_MEDIA_SCANNER_SCAN_FILE -d file://{} \\;"
+adb shell "find </file path/> -exec am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d file://{} \\;"
 ````
 
 Or like this (if above won't work for you):
 ```
-adb shell "find <file path> | while read f; do am broadcast -a android.intent.ACTION_MEDIA_SCANNER_SCAN_FILE -d \"file://${f}\"; done"
+adb shell "find <file path> | while read f; do am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d \"file://${f}\"; done"
 
 ```
