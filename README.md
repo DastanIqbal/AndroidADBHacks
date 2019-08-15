@@ -1,4 +1,8 @@
 ## AndroidADBHacks
+### Copy text in clipboard
+```
+adb shell input text "<input text >"
+```
 ### Send Media Scan Broadcast
 
 ```
