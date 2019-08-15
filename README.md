@@ -1,5 +1,9 @@
 ## AndroidADBHacks
-### Copy text in clipboard
+### Send Boot Completed Boradcast
+```
+adb shell am broadcast -a android.intent.action.BOOT_COMPLETED -p com.example.package
+```
+### Input Text
 ```
 adb shell input text "<input text >"
 ```
